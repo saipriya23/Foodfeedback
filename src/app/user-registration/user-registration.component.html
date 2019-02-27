@@ -1,4 +1,4 @@
-<h1>Register</h1>
+<h1>Registration Form</h1>
 <div class="login">
 <div class="login-header"></div>
 <form [formGroup]="registerForm"  class="login-container" (ngSubmit)="onSubmit()">
@@ -46,11 +46,9 @@
           <div *ngIf="f.password.errors.required">Password is required</div>
           <div *ngIf="f.password.errors.minlength">Password must be at least 6 characters</div>
       </div>
-  </div>
+  </div><br>
   <div class="form-group">
-        <!-- <p><input type="submit" value="Register"></p> -->
-        <!-- <button [disabled]="loading" class="btn btn-primary">Register</button> -->
-       <p><button type="submit"  [disabled]="registerForm.invalid">Register</button></p> 
+    <button type="submit"  [disabled]="registerForm.invalid">Register</button><br><br>
     <a [routerLink]="['/login']" class="btn btn-link">Cancel</a>
   </div>
 </form>

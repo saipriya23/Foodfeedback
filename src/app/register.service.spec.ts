@@ -28,7 +28,7 @@ describe('RegisterService', () => {
     expect(service).toBeTruthy();
   });
 
-  it('should be created', () => {
+  it('should check the emitted value is correct', () => {
 
     const testData: Iregistration = {
       employeeId:'test',
@@ -41,10 +41,9 @@ describe('RegisterService', () => {
     spy.and.returnValue(of(true));
     service.register(testData).subscribe(
       (result) => {
-        expect(result).toBeTruthy();
+      expect(result).toBeTruthy();
       }
     )
   });
-
-
+  
 });

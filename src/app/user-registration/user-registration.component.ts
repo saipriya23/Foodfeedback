@@ -8,6 +8,7 @@ import { Router } from '@angular/router';
   templateUrl: './user-registration.component.html',
   styleUrls: ['./user-registration.component.css']
 })
+
 export class UserRegistrationComponent implements OnInit {
   get f() { return this.registerForm.controls; }
   registerForm: FormGroup;
@@ -16,7 +17,7 @@ export class UserRegistrationComponent implements OnInit {
 
   constructor( private formBuilder: FormBuilder,private registerService:RegisterService,private router:Router) { }
 
-   ngOnInit() {
+  ngOnInit() {
     this.registerForm = this.formBuilder.group({
       employeeid: ['',Validators.required],
       firstName: ['', Validators.required],
@@ -26,17 +27,17 @@ export class UserRegistrationComponent implements OnInit {
       password: ['', [Validators.required, Validators.minLength(6)]]
     });
   }
-  onSubmit() {
-      this.submitted = true;
-       if (this.registerForm.invalid) {
-           return;
-        }
-        this.loading=true;
-        this.registerService.register(this.registerForm.value)
-          .subscribe(
-                data => {
-                    this.router.navigate(['/login']);
-                },
-           );
-   }
+    onSubmit() {
+     this.submitted = true;
+      if (this.registerForm.invalid) {
+         return;
+     }
+       this.loading=true;
+       this.registerService.register(this.registerForm.value)
+       .subscribe(
+          data => {
+            this.router.navigate(['/login']);
+          },
+        );
+    }
 }
