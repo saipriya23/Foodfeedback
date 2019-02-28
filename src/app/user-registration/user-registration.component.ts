@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, Validators, FormControl } from '@angular/forms';
-import { RegisterService } from '../register.service';
+import { RegisterService } from '../Services/register.service';
 import { Router } from '@angular/router';
 
 @Component({
@@ -28,15 +28,12 @@ export class UserRegistrationComponent implements OnInit {
     });
   }
     onSubmit() {
-     this.submitted = true;
-      if (this.registerForm.invalid) {
-         return;
-     }
+       this.submitted = true; 
        this.loading=true;
        this.registerService.register(this.registerForm.value)
        .subscribe(
           data => {
-            this.router.navigate(['/login']);
+            this.router.navigate(['/']);
           },
         );
     }
