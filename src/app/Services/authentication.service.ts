@@ -11,10 +11,10 @@ export class AuthenticationService {
 
   constructor(private http:HttpClient) { }
 
-   configurl=" "
+   loginurl="https://localhost:44308/api/login";
    Login(userdetails:ILogin):Observable<Boolean>
    {
-     return this.http.post<Boolean>(this.configurl,userdetails);
+     return this.http.post<Boolean>(this.loginurl,userdetails);
    }
-  }
+}
   

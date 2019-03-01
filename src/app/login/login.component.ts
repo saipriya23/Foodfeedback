@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { FormGroup, FormBuilder, Validators } from '@angular/forms';
-import { Router, ActivatedRoute } from '@angular/router';
+import { Router} from '@angular/router';
 import { AuthenticationService } from '../Services/authentication.service';
 
 @Component({
@@ -9,14 +9,13 @@ import { AuthenticationService } from '../Services/authentication.service';
   styleUrls: ['./login.component.css']
 })
 export class LoginComponent implements OnInit {
-  loginForm: FormGroup;
+    loginForm: FormGroup;
     loading = false;
     submitted = false;
     wrongCredentials = false;
     get val() { return this.loginForm.controls; }
 
-  constructor( private formBuilder: FormBuilder,
-    private route: ActivatedRoute,
+  constructor( private formBuilder: FormBuilder,   
     private router: Router,
     private authenticationService: AuthenticationService) { }
 
@@ -25,7 +24,7 @@ export class LoginComponent implements OnInit {
       username: ['', Validators.required],
       password: ['', Validators.required]
   });
-  
+
   }
   onSubmit() {
     this.submitted = true;
@@ -34,22 +33,19 @@ export class LoginComponent implements OnInit {
       .subscribe(
        data =>
         {          
-          if(data===true)
-          {
+          if(data===true){
             this.router.navigate(['/feedbackOnFood']);
             let userdetails = JSON.stringify(this.val.username.value);
             localStorage.setItem("UserName",userdetails);
           }
-          else 
-          {
+          else{
             this.wrongCredentials = true;
-           }
-         }
+          }
+        }
       );
   }
   
-  register()
-  {
+  register(){
     this.router.navigate(['/register'])
   }
 }
