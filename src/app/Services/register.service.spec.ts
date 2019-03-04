@@ -2,7 +2,7 @@ import { TestBed } from '@angular/core/testing';
 import { RegisterService } from './register.service';
 import { HttpClient } from '@angular/common/http';
 import { of } from 'rxjs';
-import { Iregistration } from './registration';
+import { Iregistration } from '../registration';
 
 describe('RegisterService', () => {
 
@@ -45,5 +45,4 @@ describe('RegisterService', () => {
       }
     )
   });
-  
-});
+  });
