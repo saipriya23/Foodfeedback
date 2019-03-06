@@ -1,0 +1,63 @@
+<h1>Food Feedback system</h1>
+<div class="topnav">
+  <a  routerLinkActive='active'(click)=giveFeedback()>Add Feedback</a>
+  <a  routerLinkActive='active'(click)=viewFeedback()>View Feedback</a>
+</div> 
+ <div class="addfeedback">
+ <h2 class="addfeedback-header">Please provide your feedback below</h2>
+
+ <form [formGroup]="addFeedback"  class="addfeedback-container" (ngSubmit)="save()" novalidate>
+    <div class="form-group">
+        <label class="label_heading">Date</label>
+        <input class="form-control" formControlName="date" type="date">
+    </div>
+ <div *ngIf="addFeedback.controls['date'].invalid && (addFeedback.controls['date'].dirty || addFeedback.controls['date'].touched)" class="alert alert-danger">
+        <div *ngIf="addFeedback.controls['date'].errors.required">
+         Date is required.  
+      </div></div><br>
+
+<div class="selectType">
+   <div class="heading form group">
+      <label>Meals</label>
+   </div> 
+     <select formControlName="meals">
+        <option value="Lunch">Lunch</option>
+        <option value="Tea/Snacks">Tea/Snacks</option>
+        <option value="Dinner">Dinner</option>
+     </select> 
+     <div *ngIf="addFeedback.controls['meals'].invalid && (addFeedback.controls['meals'].dirty || addFeedback.controls['meals'].touched)" class="alert alert-danger">
+       <div *ngIf="addFeedback.controls['meals'].errors.required">
+     field is required.
+    </div></div><br>
+ </div>
+
+<div class="selectRating">
+   <div class=" heading form group">
+     <label>Rating</label>
+   </div> 
+       <select formControlName="rating">
+          <option value="1">1</option>
+          <option value="2">2</option>
+          <option value="3">3</option>
+          <option value="4">4</option>
+          <option value="5">5</option>
+       </select> 
+       <div *ngIf="addFeedback.controls['rating'].invalid && (addFeedback.controls['rating'].dirty || addFeedback.controls['rating'].touched)" class="alert alert-danger">
+         <div *ngIf="addFeedback.controls['rating'].errors.required">
+       field is required.
+      </div></div><br>
+</div>
+   <div class="form-group">
+     <label class="label_heading">Comment</label>
+    <textarea  rows="4"  class="form-control comments" formControlName="comment" type="text"></textarea>
+   </div>
+   <div *ngIf="addFeedback.controls['comment'].invalid && (addFeedback.controls['comment'].dirty || addFeedback.controls['comment'].touched)" class="alert alert-danger">
+     <div *ngIf="addFeedback.controls['comment'].errors.required">
+     comments are required.
+     </div></div><br>
+
+<button type="submit" [disabled]="addFeedback.invalid">save</button>
+<div class="log" *ngIf="feedbackStatus"><h3>Feedback Saved Successfully</h3></div>
+</form>
+<p><a [routerLink]="['']">Logout</a></p>
+</div>
