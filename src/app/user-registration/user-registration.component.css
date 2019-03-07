@@ -10,6 +10,9 @@
      padding: 20px;
      color: blueviolet
  }
+   h2{
+   text-align: center;
+   }
 
    .login-header {
      text-align: center;

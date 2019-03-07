@@ -1,0 +1,47 @@
+h1 {
+    text-align:center;
+    padding: 20px;
+    color: blueviolet;
+   }
+
+   h2{
+     text-align: center;
+     color: darkblue;
+   }
+
+   .viewfeedback{
+    padding-top: 100px;
+     width: 500px;
+     margin: 20px auto;
+     font-size: 16px;
+      padding: 30px; 
+   } 
+
+   .viewfeedback-header {
+    background: green;
+    padding: 10px;
+    font-size: large;
+    font-weight: normal;
+    text-align: center;
+    color: #fff;
+  }
+
+  .viewfeedback-container {
+    background: burlywood;
+    padding: 12px;
+  }
+
+  .selectType{
+    margin: 10px 0px;
+    width: 100%;
+  }
+
+  .selectType .heading{
+    float: left;
+    margin-right: 10px;
+  }
+
+  .label_heading{
+    margin-right: 10px;
+  }
+  

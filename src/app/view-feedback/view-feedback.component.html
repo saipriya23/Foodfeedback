@@ -1,0 +1,32 @@
+<h1>Food Feedback system</h1>
+ <div class="viewfeedback">
+ <h2 class="viewfeedback-header">View the Feedback</h2>
+
+ <form [formGroup]="viewFeedback"  class="viewfeedback-container" (ngSubmit)="showFeedback()" novalidate>
+    <div class="form-group">
+        <label class="label_heading">Date</label>
+        <input class="form-control" formControlName="date" type="date">
+    </div>
+ <div *ngIf="viewFeedback.controls['date'].invalid && (viewFeedback.controls['date'].dirty || viewFeedback.controls['date'].touched)" class="alert alert-danger">
+        <div *ngIf="viewFeedback.controls['date'].errors.required">
+         Date is required.  
+      </div></div><br>
+
+<div class="selectType">
+   <div class="heading form group">
+      <label>Meals</label>
+   </div> 
+     <select formControlName="meals">
+        <option value="Lunch">Lunch</option>
+        <option value="Tea/Snacks">Tea/Snacks</option>
+        <option value="Dinner">Dinner</option>
+     </select> 
+     <div *ngIf="viewFeedback.controls['meals'].invalid && (viewFeedback.controls['meals'].dirty || viewFeedback.controls['meals'].touched)" class="alert alert-danger">
+       <div *ngIf="viewFeedback.controls['meals'].errors.required">
+     field is required.
+    </div></div><br>
+ </div>
+<button type="submit" [disabled]="viewFeedback.invalid">View Feedback</button>
+</form>
+<p><a [routerLink]="['']">Logout</a></p>
+</div>

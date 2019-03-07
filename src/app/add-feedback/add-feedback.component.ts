@@ -25,7 +25,6 @@ export class AddFeedbackComponent implements OnInit {
       rating:['',Validators.required],
       comment:['',Validators.required] 
     });
-    this.giveFeedback();
   }
   giveFeedback(){
     this.route.navigate(['/addfeedback']);
