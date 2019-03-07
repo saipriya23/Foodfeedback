@@ -8,13 +8,15 @@ import { RouterModule } from '@angular/router';
 import { ReactiveFormsModule } from '@angular/forms';
 import { LoginComponent } from './login/login.component';
 import { AddFeedbackComponent } from './add-feedback/add-feedback.component';
+import { ViewFeedbackComponent } from './view-feedback/view-feedback.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     UserRegistrationComponent,
     LoginComponent,
-    AddFeedbackComponent
+    AddFeedbackComponent,
+    ViewFeedbackComponent
   ],
   imports: [
     BrowserModule,
@@ -31,6 +33,9 @@ import { AddFeedbackComponent } from './add-feedback/add-feedback.component';
       },
       {
         path:'addfeedback',component:AddFeedbackComponent
+      },
+      {
+        path:'viewfeedback',component:ViewFeedbackComponent
       }
     ])
   ],
