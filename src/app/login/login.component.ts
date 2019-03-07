@@ -34,7 +34,7 @@ export class LoginComponent implements OnInit {
        data =>
         {          
           if(data===true){
-            this.router.navigate(['/feedbackOnFood']);
+            this.router.navigate(['/addfeedback']);
             let userdetails = JSON.stringify(this.val.username.value);
             localStorage.setItem("UserName",userdetails);
           }
@@ -46,6 +46,6 @@ export class LoginComponent implements OnInit {
   }
   
   register(){
-    this.router.navigate(['/register'])
+    this.router.navigate(['/register']);
   }
 }

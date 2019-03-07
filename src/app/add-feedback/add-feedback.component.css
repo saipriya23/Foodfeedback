@@ -1,0 +1,71 @@
+.topnav {
+    overflow: hidden;
+     background-color: #333; 
+  }
+  .topnav a {
+    float: left;
+    color: #f2f2f2;
+    text-align: center;
+    padding: 14px 16px;
+    text-decoration: none;
+    font-size: 17px;
+  }
+  
+  .topnav a:hover {
+    background-color: #ddd;
+    color: black;
+  }
+  .addfeedback{
+    padding-top: 100px;
+     width: 500px;
+     margin: 20px auto;
+     font-size: 16px;
+      padding: 30px; 
+   } 
+
+   h1 {
+    text-align:center;
+    padding: 20px;
+    color: blueviolet;
+   }
+
+   h3 {
+    color: forestgreen;
+   }
+
+   h2{
+     text-align: center;
+     color: darkblue;
+   }
+
+   .addfeedback-header {
+    background: green;
+    padding: 10px;
+    font-size: large;
+    font-weight: normal;
+    text-align: center;
+    color: #fff;
+  }
+
+  .addfeedback-container {
+    background: cyan;
+    padding: 12px;
+  }
+
+  .log{
+    text-align: center;
+  }
+  .selectType,.selectRating{
+    margin: 10px 0px;
+    width: 100%;
+  }
+  .selectType .heading,.selectRating .heading{
+    float: left;
+    margin-right: 10px;
+  }
+  .label_heading{
+    margin-right: 10px;
+  }
+  .comments{
+    width: 100%;
+  }

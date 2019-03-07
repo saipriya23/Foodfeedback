@@ -7,12 +7,14 @@ import { UserRegistrationComponent } from './user-registration/user-registration
 import { RouterModule } from '@angular/router';
 import { ReactiveFormsModule } from '@angular/forms';
 import { LoginComponent } from './login/login.component';
+import { AddFeedbackComponent } from './add-feedback/add-feedback.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     UserRegistrationComponent,
-    LoginComponent
+    LoginComponent,
+    AddFeedbackComponent
   ],
   imports: [
     BrowserModule,
@@ -26,6 +28,9 @@ import { LoginComponent } from './login/login.component';
       },
       {
         path:'', component:LoginComponent
+      },
+      {
+        path:'addfeedback',component:AddFeedbackComponent
       }
     ])
   ],
